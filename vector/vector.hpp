@@ -26,6 +26,11 @@ public:
         ++m_size;
     }
 
+    auto operator[](std::size_t index) -> T&
+    {
+        return m_data[index];
+    }
+
 private:
     auto grow() -> void
     {

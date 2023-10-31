@@ -1,4 +1,5 @@
 #include <cstdint>
+#include <cassert>
 
 #include "vector.hpp"
 
@@ -13,6 +14,12 @@ auto main(int argc, char *argv[]) -> int
     v.push_back(4);
     v.push_back(5);
     v.push_back(42);
+
+    assert(1 == v[0]);
+    assert(42 == v[5]);
+
+    v[2] = v[1] + v[0];
+    assert(3 == v[2]);
 
     return 0;
 }
